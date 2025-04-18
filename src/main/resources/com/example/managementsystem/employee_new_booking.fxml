@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.managementsystem.EmployeeNewBookingController">
+
+    <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="New Booking" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="customerCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button onAction="#handleNewCustomer" text="New Customer" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+        <Label text="Vehicle:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="vehicleCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Estimated Price:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="priceLabel" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button onAction="#handleCancel" text="Cancel" />
+        <Button onAction="#handleCreateBooking" style="-fx-background-color: #ffb400; -fx-text-fill: white;" text="Create Booking" />
+    </HBox>
+</VBox>
